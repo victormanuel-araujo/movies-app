@@ -8,7 +8,7 @@ const AppStack = createNativeStackNavigator<AppRoutesParamsList>();
 
 export function AppStackRoutes() {
   return (
-    <AppStack.Navigator>
+    <AppStack.Navigator screenOptions={{ headerShown: false }}>
       <AppStack.Screen name={AppNamedRoutes.AUTH} component={AuthScreen} />
       <AppStack.Screen name={AppNamedRoutes.HOME} component={HomeScreen} />
     </AppStack.Navigator>
