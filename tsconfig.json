@@ -5,11 +5,13 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",
-    "lib": ["es2019"],
+    "lib": [
+      "es2019"
+    ],
     "allowJs": true,
     "jsx": "react-native",
     "noEmit": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "strict": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -19,17 +21,29 @@
     "skipLibCheck": true,
     "paths": {
       // JSX / Components path aliases
-      "@components/*": ["./src/components/*"],
-      "@screens/*": ["./src/screens/*"],
-
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@screens/*": [
+        "./src/screens/*"
+      ],
       // Config and top-level structure path aliases
-      "$routes/*": ["./src/routes/*"],
-      "$config/*": ["./src/config/*"],
-
-      // Utils and services path aliases 
-      "#services/*": ["./src/services/*"]
+      "$routes/*": [
+        "./src/routes/*"
+      ],
+      "$config/*": [
+        "./src/config/*"
+      ],
+      // Utils and services path aliases
+      "#services/*": [
+        "./src/services/*"
+      ]
     }
   },
+  "include": [
+    "index.d.ts",
+    "src"
+  ],
   "exclude": [
     "node_modules",
     "babel.config.js",

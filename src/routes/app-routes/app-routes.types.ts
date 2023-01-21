@@ -1,9 +1,9 @@
 export enum AppNamedRoutes {
-  AUTH = 'auth',
   HOME = 'home',
+  MOVIE_DETAILS = 'movie-details',
 }
 
 export type AppRoutesParamsList = {
-  [AppNamedRoutes.AUTH]: undefined;
   [AppNamedRoutes.HOME]: undefined;
+  [AppNamedRoutes.MOVIE_DETAILS]: undefined;
 };
