@@ -4,9 +4,7 @@ type RangeBuilder<T extends number, R extends unknown[]> = R['length'] extends T
   ? R['length']
   : R['length'] | RangeBuilder<T, [T, ...R]>;
 
-type NumberRange<T extends number> = number extends T
-  ? number
-  : RangeBuilder<T, []>;
+type NumberRange<T extends number> = number extends T ? number : RangeBuilder<T, []>;
 
 export interface ThemeBrandingColorMap {
   light: string;
@@ -36,10 +34,7 @@ export interface ThemeFontsMap {
   black: string;
 }
 
-export type ThemeAppColors = `${
-  | 'background'
-  | 'text'
-  | 'border'}.${NumberRange<2>}`;
+export type ThemeAppColors = `${'background' | 'text' | 'border'}.${NumberRange<2>}`;
 
 export type ThemeBrandingColors = `${keyof Pick<
   MoviesAppTheme['colors'],
@@ -48,10 +43,7 @@ export type ThemeBrandingColors = `${keyof Pick<
 
 export type ThemeExtraColors = 'white' | 'black';
 
-export type ThemeColorNames =
-  | ThemeAppColors
-  | ThemeExtraColors
-  | ThemeBrandingColors;
+export type ThemeColorNames = ThemeAppColors | ThemeExtraColors | ThemeBrandingColors;
 
 export interface MoviesAppTheme {
   sizes: {
@@ -76,26 +68,21 @@ export interface MoviesAppTheme {
 
 type styledThemedFn = (props: ThemeProps<MoviesAppTheme>) => string;
 
-type getThemeSpacingFnSingleArgument = (
-  all: keyof ThemeSizesMap,
-) => styledThemedFn;
+type getThemeSpacingFnSingleArgument = (all: keyof ThemeSizesMap) => styledThemedFn;
 
-type getThemeSpacingFnXY = (
-  y: keyof ThemeSizesMap,
-  x: keyof ThemeSizesMap,
-) => styledThemedFn;
+type getThemeSpacingFnXY = (y: keyof ThemeSizesMap, x?: keyof ThemeSizesMap) => styledThemedFn;
 
 type getThemeSpacingFnTopXBottom = (
   top: keyof ThemeSizesMap,
-  x: keyof ThemeSizesMap,
-  bottom: keyof ThemeSizesMap,
+  x?: keyof ThemeSizesMap,
+  bottom?: keyof ThemeSizesMap,
 ) => styledThemedFn;
 
 type getThemeSpacingFnAllSides = (
   top: keyof ThemeSizesMap,
-  right: keyof ThemeSizesMap,
-  bottom: keyof ThemeSizesMap,
-  left: keyof ThemeSizesMap,
+  right?: keyof ThemeSizesMap,
+  bottom?: keyof ThemeSizesMap,
+  left?: keyof ThemeSizesMap,
 ) => styledThemedFn;
 
 export type getThemeSpacingFn =

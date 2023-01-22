@@ -1,0 +1,1 @@
+export const SKELETON_GRADIENT_HEX_OPACITY = '22';

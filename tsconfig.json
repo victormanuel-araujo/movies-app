@@ -37,11 +37,15 @@
       // Utils and services path aliases
       "#services/*": [
         "./src/services/*"
+      ],
+      // Utils and services path aliases
+      "#utils/*": [
+        "./src/utils/*"
       ]
     }
   },
   "include": [
-    "index.d.ts",
+    "definitions",
     "src"
   ],
   "exclude": [

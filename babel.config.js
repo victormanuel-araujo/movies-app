@@ -15,6 +15,8 @@ module.exports = {
 
           // Utils and services path aliases
           '#services': './src/services',
+          '#utils': './src/utils',
+
         },
       },
     ],
