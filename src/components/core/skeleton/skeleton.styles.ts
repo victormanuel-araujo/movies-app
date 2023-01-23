@@ -23,7 +23,7 @@ export const SkeletonWrapper = styled.View<
 
 export const SkeletonGradient = styled(AnimatedLinearGradient)`
   height: 100%;
-  width: 60px;
+  width: 120px;
   position: absolute;
   top: 0px;
   left: 0px;

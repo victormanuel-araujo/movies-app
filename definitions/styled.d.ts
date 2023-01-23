@@ -48,6 +48,7 @@ declare module 'styled-components' {
 
       white: string;
       black: string;
+      yellow: string;
     };
   }
 

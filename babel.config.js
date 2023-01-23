@@ -9,6 +9,10 @@ module.exports = {
           '@components': './src/components',
           '@screens': './src/screens',
 
+          // Hooks and HOCS
+          '&hooks': './src/hooks',
+          '&hocs': './src/hocs',
+
           // Config and top-level structure path aliases
           $routes: './src/routes',
           $config: './src/config',

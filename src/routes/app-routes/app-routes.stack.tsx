@@ -1,3 +1,4 @@
+import { Header } from '@components/layout/header';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeScreen } from '@screens/home';
 
@@ -9,8 +10,13 @@ const AppStack = createNativeStackNavigator<AppRoutesParamsList>();
 
 export function AppStackRoutes() {
   return (
-    <AppStack.Navigator screenOptions={{ headerShown: false }}>
-      <AppStack.Screen name={AppNamedRoutes.HOME} component={HomeScreen} />
+    <AppStack.Navigator
+      screenOptions={{ headerShown: true, header: props => <Header {...props} /> }}>
+      <AppStack.Screen
+        component={HomeScreen}
+        name={AppNamedRoutes.HOME}
+        options={{ title: 'Movies' }}
+      />
     </AppStack.Navigator>
   );
 }

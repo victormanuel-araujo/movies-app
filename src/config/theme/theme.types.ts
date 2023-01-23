@@ -41,7 +41,7 @@ export type ThemeBrandingColors = `${keyof Pick<
   'primary' | 'secondary'
 >}.${keyof ThemeBrandingColorMap}`;
 
-export type ThemeExtraColors = 'white' | 'black';
+export type ThemeExtraColors = 'white' | 'black' | 'yellow';
 
 export type ThemeColorNames = ThemeAppColors | ThemeExtraColors | ThemeBrandingColors;
 
@@ -63,6 +63,7 @@ export interface MoviesAppTheme {
 
     white: string;
     black: string;
+    yellow: string;
   };
 }
 

@@ -4,14 +4,16 @@ import React, { useCallback } from 'react';
 
 export const useRequest = <T>(request: Result<T>) => {
   const [loading, setLoading] = React.useState<boolean>(true);
-  const [data, setData] = React.useState<null | undefined | T | ErrorResponse>(undefined);
+  const [data, setData] = React.useState<null | undefined | T>(undefined);
+  const [error, setError] = React.useState<ErrorResponse>();
 
   const makeRequest = useCallback(async () => {
     try {
       setLoading(true);
       const data = await request();
-      setData(data);
+      setData(data as T);
     } catch (e) {
+      setError(e as ErrorResponse);
       setData(null);
     } finally {
       setLoading(false);
@@ -22,5 +24,5 @@ export const useRequest = <T>(request: Result<T>) => {
     makeRequest();
   }, []);
 
-  return { data, loading, retry: makeRequest };
+  return { data, loading, error, retry: makeRequest };
 };

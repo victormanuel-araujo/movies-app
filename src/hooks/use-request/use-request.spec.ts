@@ -17,10 +17,12 @@ describe('useRequest hook', () => {
     expect(hookRendered.result.current.loading).toBe(true);
     expect(hookRendered.result.current.data).toBe(undefined);
 
-    await hookRendered.waitForNextUpdate();
+    await act(async () => {
+      await hookRendered.waitForNextUpdate();
 
-    expect(hookRendered.result.current.data).toMatchObject({ success: true });
-    expect(hookRendered.result.current.loading).toBe(false);
+      expect(hookRendered.result.current.data).toMatchObject({ success: true });
+      expect(hookRendered.result.current.loading).toBe(false);
+    });
   });
 
   it('should correctly handle an error', async () => {
@@ -33,10 +35,12 @@ describe('useRequest hook', () => {
     expect(hookRendered.result.current.loading).toBe(true);
     expect(hookRendered.result.current.data).toBe(undefined);
 
-    await hookRendered.waitForNextUpdate();
+    await act(async () => {
+      await hookRendered.waitForNextUpdate();
 
-    expect(hookRendered.result.current.data).toBe(null);
-    expect(hookRendered.result.current.loading).toBe(false);
+      expect(hookRendered.result.current.data).toBe(null);
+      expect(hookRendered.result.current.loading).toBe(false);
+    });
   });
 
   it('should be able to call the request again', async () => {
@@ -51,12 +55,14 @@ describe('useRequest hook', () => {
     expect(hookRendered.result.current.loading).toBe(true);
     expect(hookRendered.result.current.data).toBe(undefined);
 
-    await hookRendered.waitForNextUpdate();
+    await act(async () => {
+      await hookRendered.waitForNextUpdate();
 
-    expect(hookRendered.result.current.data).toBe(null);
-    expect(hookRendered.result.current.loading).toBe(false);
+      expect(hookRendered.result.current.data).toBe(null);
+      expect(hookRendered.result.current.loading).toBe(false);
 
-    await retry();
-    expect(retry).toBeCalledTimes(1);
+      await retry();
+      expect(retry).toBeCalledTimes(1);
+    });
   });
 });

@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Skeleton component should match snapshot 1`] = `
+<View
+  backgroundColor="primary.light"
+  height={20}
+  style={
+    [
+      {
+        "backgroundColor": "#B98AE6",
+        "borderRadius": "px",
+        "height": 20,
+        "overflow": "hidden",
+        "position": "relative",
+        "width": 100,
+      },
+    ]
+  }
+  testID="skeleton-wrapper"
+  width={100}
+>
+  <BVLinearGradient
+    collapsable={false}
+    colors={
+      [
+        580142048,
+        4287906784,
+        580142048,
+      ]
+    }
+    endPoint={
+      {
+        "x": 1,
+        "y": 0,
+      }
+    }
+    locations={null}
+    startPoint={
+      {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    style={
+      {
+        "height": "100%",
+        "left": "-100%",
+        "position": "absolute",
+        "top": 0,
+        "width": 120,
+      }
+    }
+    testID="skeleton-gradient"
+  />
+</View>
+`;

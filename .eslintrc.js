@@ -28,6 +28,8 @@ module.exports = {
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
 
+    'react/display-name': 0,
+
     'import/no-unresolved': 0,
     'import/named': 0,
     'import/namespace': 0,

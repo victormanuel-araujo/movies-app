@@ -4,6 +4,7 @@ const theme: MoviesAppTheme = {
   colors: {
     black: '#141414',
     white: '#FFFFFF',
+    yellow: '#c4a841',
 
     background: ['#202020', '#272727', '#383838'],
     border: ['#383838', '#434343', '#515151'],

@@ -27,6 +27,13 @@
       "@screens/*": [
         "./src/screens/*"
       ],
+      // JSX / Components path aliases
+      "&hooks/*": [
+        "./src/hooks/*"
+      ],
+      "&hocs/*": [
+        "./src/hocs/*"
+      ],
       // Config and top-level structure path aliases
       "$routes/*": [
         "./src/routes/*"
@@ -38,7 +45,6 @@
       "#services/*": [
         "./src/services/*"
       ],
-      // Utils and services path aliases
       "#utils/*": [
         "./src/utils/*"
       ]

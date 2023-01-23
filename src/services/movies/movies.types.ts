@@ -14,14 +14,3 @@ export interface UpcomingMovie {
   video?: boolean;
   vote_average: number;
 }
-
-export interface UpcomingMoviesResponse {
-  page?: number;
-  results: UpcomingMovie[];
-  dates: {
-    minimum: string;
-    maximum: string;
-  };
-  total_pages?: number;
-  total_results?: number;
-}
