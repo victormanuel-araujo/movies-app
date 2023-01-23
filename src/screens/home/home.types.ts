@@ -3,10 +3,6 @@ import { UpcomingMovie } from '#services/movies/movies.types';
 
 import { PaginatedRequestLoading } from '&hooks/use-paginated-request/use-paginated-request.types';
 
-export interface HomeScreenProps {}
-
-export type HomeScreenNavigationProps = undefined;
-
 export interface HomeContainerArgs {
   loading: PaginatedRequestLoading;
   movies?: UpcomingMovie[];

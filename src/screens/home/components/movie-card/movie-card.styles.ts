@@ -1,7 +1,7 @@
 import { getThemeColor, getThemeSpacing } from '$config/theme/theme.utils';
 import styled from 'styled-components/native';
 
-export const MovieCardWrapper = styled.View`
+export const MovieCardWrapper = styled.TouchableOpacity.attrs(() => ({ activeOpacity: 0.7 }))`
   border-width: 1px;
   border-radius: 8px;
   position: relative;

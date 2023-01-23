@@ -2,6 +2,7 @@ import { Star } from 'react-native-feather';
 
 import { Typography } from '@components/core/typography/typography.component';
 import { TMDB_IMAGE_PATH } from '@env';
+import { useNavigation } from '@react-navigation/native';
 import { MovieCardSkeleton } from '@screens/home/components/movie-card/movie-card.skeleton';
 import { MovieCardProps } from '@screens/home/components/movie-card/movie-card.types';
 
@@ -9,9 +10,12 @@ import * as Styles from './movie-card.styles';
 import { MoviewCardRatingWrapper } from './movie-card.styles';
 
 import { withParentDimensions } from '&hocs/with-parent-dimensions';
+import { AppNamedRoutes, AppRoutesNavigationProp } from '$routes/app-routes/app-routes.types';
 import React, { useMemo } from 'react';
 
 const MovieCardComponent = (props: MovieCardProps) => {
+  const navigation = useNavigation<AppRoutesNavigationProp>();
+
   const imageURL = useMemo(() => {
     if (!props.rect?.width) return null;
     const correctWidth = props.rect.width - (props.rect.width % 100) + 100;
@@ -21,7 +25,13 @@ const MovieCardComponent = (props: MovieCardProps) => {
   if (!imageURL) return <MovieCardSkeleton />;
 
   return (
-    <Styles.MovieCardWrapper>
+    <Styles.MovieCardWrapper
+      onPress={() =>
+        navigation.navigate({
+          name: AppNamedRoutes.MOVIE_DETAILS,
+          params: { title: props.title, movieId: String(props.id) },
+        })
+      }>
       {imageURL && (
         <Styles.MovieCardImage
           resizeMode="contain"

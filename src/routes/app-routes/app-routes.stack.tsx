@@ -1,6 +1,7 @@
 import { Header } from '@components/layout/header';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeScreen } from '@screens/home';
+import { MovieDetailsScreen } from '@screens/movie-details';
 
 import { AppNamedRoutes, AppRoutesParamsList } from './app-routes.types';
 
@@ -17,6 +18,7 @@ export function AppStackRoutes() {
         name={AppNamedRoutes.HOME}
         options={{ title: 'Movies' }}
       />
+      <AppStack.Screen component={MovieDetailsScreen} name={AppNamedRoutes.MOVIE_DETAILS} />
     </AppStack.Navigator>
   );
 }

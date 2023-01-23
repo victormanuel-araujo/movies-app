@@ -1,22 +1,18 @@
-import {
-  getThemeColor,
-  getThemeFontFamily,
-  getThemeFontSize,
-  getThemeSpacing,
-} from '$config/theme/theme.utils';
+import { getThemeColor, getThemeSpacing } from '$config/theme/theme.utils';
 import styled from 'styled-components/native';
 
 export const HeaderWrapper = styled.View<{ insetsTop: number }>`
   background-color: ${getThemeColor('black')};
-  padding: ${({ insetsTop, theme }) => theme.sizes.spacing.lg + insetsTop}px 0
-    ${getThemeSpacing('md')};
+  padding: ${({ insetsTop, theme }) => theme.sizes.spacing.lg + insetsTop}px
+    ${getThemeSpacing('sm', 'md')};
   align-items: center;
   border-bottom-width: 1px;
   border-bottom-color: ${getThemeColor('border.0')};
+  justify-content: space-between;
+  flex-direction: row;
 `;
 
-export const HeaderTitle = styled.Text`
-  color: ${getThemeColor('white')};
-  font-size: ${getThemeFontSize('xl')};
-  font-family: ${getThemeFontFamily('bold')};
+export const HeaderSideWrapper = styled.View`
+  width: 32px;
+  height: 32px;
 `;
